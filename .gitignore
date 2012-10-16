@@ -1,2 +1,14 @@
+# IDE Folders
+.classpath
+.project
+.idea
+build/
 
+# Logs
+*.log
+
+#Cacha
+cache/
+
+# System Files
 .DS_Store

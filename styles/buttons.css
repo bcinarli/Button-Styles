@@ -12,290 +12,204 @@
  **/
 
 /*  ------------------- Shared  ------------------- */
-    .button {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        height: 16px;
-        margin: 0;
-        padding: 6px 10px;
-        border: 1px solid;
-        color: #fefefe;
-        font-size: 13px;
-        font-family: sans-serif;
-        line-height: 16px;
-        text-decoration: none;
-        gray-space: nowrap;
-        vertical-align: bottom;
-
-        -moz-border-radius: 4px;
-        -o-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
-
-        text-shadow: 0 1px 0 #777;
-    }
-    button.button {
-        height: 30px;
-        padding: 5px 7px 6px;
-    }
-
-    .no-cssgradients .button {
-        background: url(../images/button-bg.png) repeat-x;
-    }
-
-    .no-borderradius .button:before, .no-borderradius .button:after { content: ' '; position: absolute; top: -1px; width: 12px; height: 30px; background: url(../images/corners.png); }
-    .no-borderradius button { border-right: none; border-left: none; padding: 4px 10px 6px; }
-    .no-borderradius button.button:before, .no-borderradius button.button:after { top: -2px; }
-    .no-borderradius .button:before { left: -1px; }
-    .no-borderradius button.button:before { left: 0; }
-    .no-borderradius .button:after { right: -1px; }
-    .no-borderradius button.button:after { right: 0; }
-    .no-borderradius .button-left:after,
-    .no-borderradius .button-middle:before,
-    .no-borderradius .button-middle:after,
-    .no-borderradius .button-right:before { content: ''; width: 0; height: 0; }
-
-    .button-left{
-        -moz-border-radius: 4px 0 0 4px;
-        -o-border-radius: 4px 0 0 4px;
-        -webkit-border-radius: 4px 0 0 4px;
-        border-radius: 4px 0 0 4px;
-    }
-
-    .button-middle{
-        border-left: none;
-
-        -moz-border-radius: 0;
-        -o-border-radius: 0;
-        -webkit-border-radius: 0;
-        border-radius: 0;
-    }
-
-    .button-right{
-        border-left: none;
-
-        -moz-border-radius: 0 4px 4px 0;
-        -o-border-radius: 0 4px 4px 0;
-        -webkit-border-radius: 0 4px 4px 0;
-        border-radius: 0 4px 4px 0;
-    }
-
-    .round {
-        -moz-border-radius: 12px;
-        -o-border-radius: 12px;
-        -webkit-border-radius: 12px;
-        border-radius: 12px;
-    }
-
-    .round.button-left {
-        -moz-border-radius: 12px 0 0 12px;
-        -o-border-radius: 12px 0 0 12px;
-        -webkit-border-radius: 12px 0 0 12px;
-        border-radius: 12px 0 0 12px;
-    }
-
-    .round.button-right {
-        -moz-border-radius: 0 12px 12px 0;
-        -o-border-radius: 0 12px 12px 0;
-        -webkit-border-radius: 0 12px 12px 0;
-        border-radius: 0 12px 12px 0;
-    }
-
-    .icon {
-        display: block;
-        float: left;
-        overflow: hidden;
-        width: 15px;
-        height: 16px;
-        margin-right: 6px;
-        background: url(../images/icons.png) no-repeat;
-    }
-    .icon-right {
-        float: right;
-        margin-left: 6px;
-        margin-right: 0;
-    }
+    .button { position: relative; display: inline-block; cursor: pointer; height: 16px; margin: 0; padding: 6px 10px; border: 1px solid; border-radius: 4px; color: #fefefe; font: 13px/1.3 sans-serif; text-decoration: none; vertical-align: bottom; text-shadow: 0 1px 0 #777; }
 
-    .user { background-position: 0 0; }
-    .gray .user { background-position: 0 -16px; }
+    button.button { height: 30px; padding: 5px 7px 6px; }
 
-    .user-group { width: 19px; background-position: 0 -32px; }
-    .gray .user-group { background-position: 0 -48px; }
+    .no-cssgradients .button { background: url(../images/button-bg.png) repeat-x; }
 
-    .calendar { background-position: 0 -64px; }
-    .gray .calendar { background-position: 0 -80px; }
+    .button-left{ border-radius: 4px 0 0 4px; }
+    .button-middle{ border-left: none; border-radius: 0; }
+    .button-right{ border-left: none; border-radius: 0 4px 4px 0;  }
 
-    .comment { width: 22px; background-position: 0 -96px; }
-    .gray .comment { background-position: 0 -112px; }
+    .round { border-radius: 12px; }
+        .round.button-left { border-radius: 12px 0 0 12px; }
+        .round.button-right { border-radius: 0 12px 12px 0; }
 
-    .photos { width: 21px; height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -128px; }
-    .gray .photos { background-position: 0 -147px; }
+    .icon:before, .icon-after:after { content: ""; display: block; overflow: hidden; width: 15px; height: 16px; background: url(../images/icons.png) no-repeat; }
+        .icon:before { float: left; margin-right: 6px; }
+        .icon-after:after { float: right; margin-left: 6px; }
+        .icon-after:before { display: none; }
 
-    .videos { width: 17px; background-position: 0 -166px; }
-    .gray .videos { background-position: 0 -182px; }
+    .user:before { background-position: 0 0; }
+        .gray.user:before { background-position: 0 -16px; }
 
-    .message { background-position: 0 -198px; }
-    .gray .message { background-position: 0 -214px; }
+    .user-group:before { width: 19px; background-position: 0 -32px; }
+        .gray.user-group:before { background-position: 0 -48px; }
 
-    .new-message { width: 18px; background-position: 0 -230px; }
-    .gray .new-message { background-position: 0 -246px; }
+    .profile:before { width: 17px; background-position: 0 -262px; }
+        .gray.profile:before { background-position: 0 -278px; }
 
-    .profile { width: 17px; background-position: 0 -262px; }
-    .gray .profile { background-position: 0 -278px; }
+    .calendar:before { background-position: 0 -64px; }
+        .gray.calendar:before { background-position: 0 -80px; }
 
-    .presentation { width: 20px; background-position: 0 -294px; }
-    .gray .presentation { background-position: 0 -311px; }
+    .photos:before { width: 21px; height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -128px; }
+        .gray.photos:before { background-position: 0 -147px; }
 
-    .settings { width: 12px; background-position: 0 -327px; }
-    .gray .settings { background-position: 0 -343px; }
+    .videos:before { width: 17px; background-position: 0 -166px; }
+        .gray.videos:before { background-position: 0 -182px; }
 
-    .unlock { width: 16px; background-position: 0 -359px; }
-    .gray .unlock { background-position: 0 -375px; }
+    .message:before { background-position: 0 -198px; }
+        .gray.message:before { background-position: 0 -214px; }
 
-    .lock { width: 16px; background-position: 0 -391px; }
-    .gray .lock { background-position: 0 -407px; }
+    .new-message:before { width: 18px; background-position: 0 -230px; }
+        .gray.new-message:before { background-position: 0 -246px; }
 
-    .screen { background-position: 0 -423px; }
-    .gray .screen { background-position: 0 -439px; }
+    .comment:before { width: 22px; background-position: 0 -96px; }
+        .gray.comment:before { background-position: 0 -112px; }
 
-    .save { background-position: 0 -455px; }
-    .gray .save { background-position: 0 -471px; }
+    .presentation:before { width: 20px; background-position: 0 -294px; }
+        .gray.presentation:before { background-position: 0 -311px; }
 
-    .edit { width: 18px; height: 18px; margin-top: -1px; margin-bottom: -1px; background-position: 0 -487px; }
-    .gray .edit { background-position: 0 -505px; }
+    .settings:before { width: 12px; background-position: 0 -327px; }
+        .gray.settings:before { background-position: 0 -343px; }
 
-    .cut { width: 13px; height: 17px; margin-bottom: -1px; background-position: 0 -523px; }
-    .gray .cut { background-position: 0 -540px; }
+    .unlock:before { width: 16px; background-position: 0 -359px; }
+        .gray.unlock:before { background-position: 0 -375px; }
 
-    .paste { width: 13px; height: 17px; margin-bottom: -1px; background-position: 0 -557px; }
-    .gray .paste { background-position: 0 -574px; }
+    .lock:before { width: 16px; background-position: 0 -391px; }
+        .gray.lock:before { background-position: 0 -407px; }
 
-    .facebook { width: 11px; height: 17px; margin-bottom: -1px; background-position: 0 -591px; }
-    .gray .facebook { background-position: 0 -608px; }
+    .screen:before { background-position: 0 -423px; }
+        .gray.screen:before { background-position: 0 -439px; }
 
-    .twitter { width: 11px; background-position: 0 -625px; }
-    .gray .twitter { background-position: 0 -641px; }
+    .save:before { background-position: 0 -455px; }
+        .gray.save:before { background-position: 0 -471px; }
 
-    .search { background-position: 0 -657px; }
-    .gray .search { background-position: 0 -673px; }
+    .edit:before { width: 18px; height: 18px; margin-top: -1px; margin-bottom: -1px; background-position: 0 -487px; }
+        .gray.edit:before { background-position: 0 -505px; }
 
-    .logout { background-position: 0 -689px; }
-    .gray .logout { background-position: 0 -705px; }
+    .cut:before { width: 13px; height: 17px; margin-bottom: -1px; background-position: 0 -523px; }
+        .gray.cut:before { background-position: 0 -540px; }
 
-    .address-book { height: 17px; margin-bottom: -1px; background-position: 0 -721px; }
-    .gray .address-book { background-position: 0 -738px; }
+    .paste:before { width: 13px; height: 17px; margin-bottom: -1px; background-position: 0 -557px; }
+        .gray.paste:before { background-position: 0 -574px; }
 
-    .clock { background-position: 0 -755px; }
-    .gray .clock { background-position: 0 -770px; }
+    .facebook:before { width: 11px; height: 17px; margin-bottom: -1px; background-position: 0 -591px; }
+        .gray.facebook:before { background-position: 0 -608px; }
 
-    .documents { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -787px; }
-    .gray .documents { background-position: 0 -805px; }
+    .twitter:before { width: 11px; background-position: 0 -625px; }
+        .gray.twitter:before { background-position: 0 -641px; }
 
-    .documents-pdf { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -825px; }
-    .gray .documents-pdf { background-position: 0 -843px; }
+    .search:before { background-position: 0 -657px; }
+        .gray.search:before { background-position: 0 -673px; }
 
-    .documents-word { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -862px; }
-    .gray .documents-word { background-position: 0 -881px; }
+    .logout:before { background-position: 0 -689px; }
+    .gray.logout:before { background-position: 0 -705px; }
 
-    .documents-excel { width: 20px; background-position: 0 -900px; }
-    .gray .documents-excel { background-position: 0 -916px; }
+    .address-book:before { height: 17px; margin-bottom: -1px; background-position: 0 -721px; }
+    .gray.address-book:before { background-position: 0 -738px; }
 
-    .documents-powerpoint { width: 19px;background-position: 0 -932px; }
-    .gray .documents-powerpoint { background-position: 0 -948px; }
+    .clock:before { background-position: 0 -755px; }
+    .gray.clock:before { background-position: 0 -770px; }
 
-    .documents-zip { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -964px; }
-    .gray .documents-zip { background-position: 0 -983px; }
+    .documents:before { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -787px; }
+    .gray.documents:before { background-position: 0 -805px; }
 
-    .document { width: 12px; background-position: 0 -1002px; }
-    .gray .document { background-position: 0 -1018px; }
+    .documents-pdf:before { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -825px; }
+    .gray.documents-pdf:before { background-position: 0 -843px; }
 
-    .document-pdf { width: 12px; background-position: 0 -1034px; }
-    .gray .document-pdf { background-position: 0 -1050px; }
+    .documents-word:before { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -862px; }
+    .gray.documents-word:before { background-position: 0 -881px; }
 
-    .document-word { width: 12px; background-position: 0 -1066px; }
-    .gray .document-word { background-position: 0 -1082px; }
+    .documents-excel:before { width: 20px; background-position: 0 -900px; }
+    .gray.documents-excel:before { background-position: 0 -916px; }
 
-    .document-excel { width: 16px; background-position: 0 -1098px; }
-    .gray .document-excel { background-position: 0 -1114px; }
+    .documents-powerpoint:before { width: 19px;background-position: 0 -932px; }
+    .gray.documents-powerpoint:before { background-position: 0 -948px; }
 
-    .document-powerpoint { width: 16px;background-position: 0 -1130px; }
-    .gray .document-powerpoint { background-position: 0 -1146px; }
+    .documents-zip:before { height: 19px; margin-top: -1px; margin-bottom: -2px; background-position: 0 -964px; }
+    .gray.documents-zip:before { background-position: 0 -983px; }
 
-    .document-zip { width: 12px; background-position: 0 -1162px; }
-    .gray .document-zip { background-position: 0 -1178px; }
+    .document:before { width: 12px; background-position: 0 -1002px; }
+    .gray.document:before { background-position: 0 -1018px; }
 
-    .music { background-position: 0 -1194px; }
-    .gray .music { background-position: 0 -1210px; }
+    .document-pdf:before { width: 12px; background-position: 0 -1034px; }
+    .gray.document-pdf:before { background-position: 0 -1050px; }
 
-    .play { width: 9px; background-position: 0 -1226px; }
-    .gray .play { background-position: 0 -1242px; }
+    .document-word:before { width: 12px; background-position: 0 -1066px; }
+    .gray.document-word:before { background-position: 0 -1082px; }
 
-    .stop { width: 13px; background-position: 0 -1258px; }
-    .gray .stop { background-position: 0 -1274px; }
+    .document-excel:before { width: 16px; background-position: 0 -1098px; }
+    .gray.document-excel:before { background-position: 0 -1114px; }
 
-    .next-track { width: 13px; background-position: 0 -1290px; }
-    .gray .next-track { background-position: 0 -1306px; }
+    .document-powerpoint:before { width: 16px;background-position: 0 -1130px; }
+    .gray.document-powerpoint:before { background-position: 0 -1146px; }
 
-    .prev-track { background-position: 0 -1322px; }
-    .gray .prev-track { background-position: 0 -1338px; }
+    .document-zip:before { width: 12px; background-position: 0 -1162px; }
+    .gray.document-zip:before { background-position: 0 -1178px; }
 
-    .eject { width: 17px; background-position: 0 -1354px; }
-    .gray .eject { background-position: 0 -1370px; }
+    .music:before { background-position: 0 -1194px; }
+    .gray.music:before { background-position: 0 -1210px; }
 
-    .remove { width: 16px; background-position: 0 -1386px; }
-    .gray .remove { background-position: 0 -1402px; }
+    .play:after { width: 9px; background-position: 0 -1226px; }
+    .gray.play:after { background-position: 0 -1242px; }
 
-    .add { width: 16px; background-position: 0 -1418px; }
-    .gray .add { background-position: 0 -1434px; }
+    .stop:after { width: 13px; background-position: 0 -1258px; }
+    .gray.stop:after { background-position: 0 -1274px; }
 
-    .cancel { width: 15px; background-position: 0 -1450px; }
-    .gray .cancel { background-position: 0 -1466px; }
+    .next-track:after { width: 13px; background-position: 0 -1290px; }
+    .gray.next-track:after { background-position: 0 -1306px; }
 
-    .ok { background-position: 0 -1482px; }
-    .gray .ok { background-position: 0 -1498px; }
+    .prev-track:before { background-position: 0 -1322px; }
+    .gray.prev-track:before { background-position: 0 -1338px; }
 
-    .home { width: 17px; background-position: 0 -1514px; }
-    .gray .home { background-position: 0 -1530px; }
+    .eject:after { width: 17px; background-position: 0 -1354px; }
+    .gray.eject:after { background-position: 0 -1370px; }
 
-    .crosshair { background-position: 0 -1546px; }
-    .gray .crosshair { background-position: 0 -1562px; }
+    .remove:before { width: 16px; background-position: 0 -1386px; }
+    .gray.remove:before { background-position: 0 -1402px; }
 
-    .favorite { width: 16px; background-position: 0 -1578px; }
-    .gray .favorite { background-position: 0 -1595px; }
+    .add:before { width: 16px; background-position: 0 -1418px; }
+    .gray.add:before { background-position: 0 -1434px; }
 
-    .unfavorite { background-position: 0 -1612px; }
-    .gray .unfavorite { background-position: 0 -1628px; }
+    .cancel:before { width: 15px; background-position: 0 -1450px; }
+    .gray.cancel:before { background-position: 0 -1466px; }
 
-    .folder { width: 18px; background-position: 0 -1644px; }
-    .gray .folder { background-position: 0 -1660px; }
+    .ok:before { background-position: 0 -1482px; }
+    .gray.ok:before { background-position: 0 -1498px; }
 
-    .tag { background-position: 0 -1676px; }
-    .gray .tag { background-position: 0 -1692px; }
+    .home:before { width: 17px; background-position: 0 -1514px; }
+    .gray.home:before { background-position: 0 -1530px; }
 
-    .bookmark { width: 11px; background-position: 0 -1708px; }
-    .gray .bookmark { background-position: 0 -1724px; }
+    .crosshair:before { background-position: 0 -1546px; }
+    .gray.crosshair:before { background-position: 0 -1562px; }
 
-    .bookmark-book { width: 13px; background-position: 0 -1740px; }
-    .gray .bookmark-book { background-position: 0 -1756px; }
+    .favorite:before { width: 16px; background-position: 0 -1578px; }
+    .gray.favorite:before { background-position: 0 -1595px; }
 
-    .bar-graph { width: 18px; background-position: 0 -1772px; }
-    .gray .bar-graph { background-position: 0 -1788px; }
+    .unfavorite:before { background-position: 0 -1612px; }
+    .gray.unfavorite:before { background-position: 0 -1628px; }
 
-    .heart { width: 16px; background-position: 0 -1804px; }
-    .gray .heart { background-position: 0 -1820px; }
+    .folder:before { width: 18px; background-position: 0 -1644px; }
+    .gray.folder:before { background-position: 0 -1660px; }
 
-    .arrow-left { background-position: 0 -1836px; }
-    .gray .arrow-left { background-position: 0 -1852px; }
+    .tag:before { background-position: 0 -1676px; }
+    .gray.tag:before { background-position: 0 -1692px; }
 
-    .arrow-right { background-position: 0 -1868px; }
-    .gray .arrow-right { background-position: 0 -1884px; }
+    .bookmark:before { width: 11px; background-position: 0 -1708px; }
+    .gray.bookmark:before { background-position: 0 -1724px; }
 
-    .arrow-down { width: 14px; background-position: 0 -1900px; }
-    .gray .arrow-down { background-position: 0 -1916px; }
+    .bookmark-book:before { width: 13px; background-position: 0 -1740px; }
+    .gray.bookmark-book:before { background-position: 0 -1756px; }
 
-    .arrow-up { width: 14px; background-position: 0 -1932px; }
-    .gray .arrow-up { background-position: 0 -1948px; }
+    .bar-graph:before { width: 18px; background-position: 0 -1772px; }
+    .gray.bar-graph:before { background-position: 0 -1788px; }
+
+    .heart:before { width: 16px; background-position: 0 -1804px; }
+    .gray.heart:before { background-position: 0 -1820px; }
+
+    .arrow-left:before { background-position: 0 -1836px; }
+    .gray.arrow-left:before { background-position: 0 -1852px; }
+
+    .arrow-right:after { background-position: 0 -1868px; }
+    .gray.arrow-right:after { background-position: 0 -1884px; }
+
+    .arrow-down:before { width: 14px; background-position: 0 -1900px; }
+    .gray.arrow-down:before { background-position: 0 -1916px; }
+
+    .arrow-up:before { width: 14px; background-position: 0 -1932px; }
+    .gray.arrow-up:before { background-position: 0 -1948px; }
 /*  ------------------- Shared  ------------------- */
 /*  ------------------- White Button  ------------------- */
     .gray {
@@ -312,10 +226,6 @@
         text-shadow: 0 1px 0 #fafafa;
     }
     .no-cssgradients .gray { background-position: 0 0; }
-    .no-borderradius .gray:before { background-position: 0 0; }
-    .no-borderradius .gray:after { background-position: 0 -60px; }
-    .no-borderradius .gray.round:before { background-position: 0 -120px; }
-    .no-borderradius .gray.round:after { background-position: 0 -180px; }
 
     .gray:hover {
         background: -moz-linear-gradient(bottom, #fefefe 0%, #d6d7d9 50%, #cacbcd 100%);
@@ -326,10 +236,6 @@
         background: linear-gradient(bottom, #fefefe 0%, #d6d7d9 50%, #cacbcd 100%);
     }
     .no-cssgradients .gray:hover { background-position: 0 -28px; }
-    .no-borderradius .gray:hover:before { background-position: 0 -30px; }
-    .no-borderradius .gray:hover:after { background-position: 0 -90px; }
-    .no-borderradius .gray.round:hover:before { background-position: 0 -150px; }
-    .no-borderradius .gray.round:hover:after { background-position: 0 -210px; }
 /*  ------------------- White Button  ------------------- */
 /*  ------------------- Black Button  ------------------- */
     .black {
@@ -343,10 +249,6 @@
         background: linear-gradient(top, #626365 0%, #363636 50%, #020202 100%);
     }
     .no-cssgradients .black { background-position: 0 -56px; }
-    .no-borderradius .black:before { background-position: 0 -240px; }
-    .no-borderradius .black:after { background-position: 0 -300px; }
-    .no-borderradius .black.round:before { background-position: 0 -360px; }
-    .no-borderradius .black.round:after { background-position: 0 -420px; }
 
     .black:hover {
         background: -moz-linear-gradient(bottom, #626365 0%, #363636 50%, #020202 100%);
@@ -357,10 +259,6 @@
         background: linear-gradient(bottom, #626365 0%, #363636 50%, #020202 100%);
     }
     .no-cssgradients .black:hover { background-position: 0 -84px; }
-    .no-borderradius .black:hover:before { background-position: 0 -270px; }
-    .no-borderradius .black:hover:after { background-position: 0 -330px; }
-    .no-borderradius .black.round:hover:before { background-position: 0 -390px; }
-    .no-borderradius .black.round:hover:after { background-position: 0 -450px; }
 /*  ------------------- Black Button  ------------------- */
 /*  ------------------- Blue Button  ------------------- */
     .blue {
@@ -376,10 +274,6 @@
         text-shadow: 0 1px 0 #0a0349;
     }
     .no-cssgradients .blue { background-position: 0 -112px; }
-    .no-borderradius .blue:before { background-position: 0 -480px; }
-    .no-borderradius .blue:after { background-position: 0 -540px; }
-    .no-borderradius .blue.round:before { background-position: 0 -600px; }
-    .no-borderradius .blue.round:after { background-position: 0 -660px; }
 
     .blue:hover {
         background: -moz-linear-gradient(bottom, #1a477e 0%, #193871 50%, #0a0349 100%);
@@ -390,10 +284,6 @@
         background: linear-gradient(bottom, #1a477e 0%, #193871 50%, #0a0349 100%);
     }
     .no-cssgradients .blue:hover { background-position: 0 -140px; }
-    .no-borderradius .blue:hover:before { background-position: 0 -510px; }
-    .no-borderradius .blue:hover:after { background-position: 0 -570px; }
-    .no-borderradius .blue.round:hover:before { background-position: 0 -630px; }
-    .no-borderradius .blue.round:hover:after { background-position: 0 -690px; }
 /*  ------------------- Blue Button  ------------------- */
 /*  ------------------- Red Button  ------------------- */
     .red {
@@ -409,10 +299,6 @@
         text-shadow: 0 1px 0 #c2272d;
     }
     .no-cssgradients .red { background-position: 0 -168px; }
-    .no-borderradius .red:before { background-position: 0 -720px; }
-    .no-borderradius .red:after { background-position: 0 -780px; }
-    .no-borderradius .red.round:before { background-position: 0 -840px; }
-    .no-borderradius .red.round:after { background-position: 0 -900px; }
 
     .red:hover {
         background: -moz-linear-gradient(bottom, #f25c41 0%, #db2027 50%, #c2272d 100%);
@@ -423,10 +309,6 @@
         background: linear-gradient(bottom, #f25c41 0%, #db2027 50%, #c2272d 100%);
     }
     .no-cssgradients .red:hover { background-position: 0 -196px; }
-    .no-borderradius .red:hover:before { background-position: 0 -750px; }
-    .no-borderradius .red:hover:after { background-position: 0 -810px; }
-    .no-borderradius .red.round:hover:before { background-position: 0 -870px; }
-    .no-borderradius .red.round:hover:after { background-position: 0 -930px; }
 /*  ------------------- Red Button  ------------------- */
 /*  ------------------- Green Button  ------------------- */
     .green {
@@ -442,10 +324,6 @@
         text-shadow: 0 1px 0 #00733a;
     }
     .no-cssgradients .green { background-position: 0 -224px; }
-    .no-borderradius .green:before { background-position: 0 -960px; }
-    .no-borderradius .green:after { background-position: 0 -1020px; }
-    .no-borderradius .green.round:before { background-position: 0 -1080px; }
-    .no-borderradius .green.round:after { background-position: 0 -1140px; }
 
     .green:hover {
         background: -moz-linear-gradient(bottom, #8bc43f 0%, #499f3a 50%, #00733a 100%);
@@ -456,9 +334,5 @@
         background: linear-gradient(bottom, #8bc43f 0%, #499f3a 50%, #00733a 100%);
     }
     .no-cssgradients .green:hover { background-position: 0 -252px; }
-    .no-borderradius .green:hover:before { background-position: 0 -990px; }
-    .no-borderradius .green:hover:after { background-position: 0 -1050px; }
-    .no-borderradius .green.round:hover:before { background-position: 0 -1110px; }
-    .no-borderradius .green.round:hover:after { background-position: 0 -1170px; }
 /*  ------------------- Green Button  ------------------- */
 
